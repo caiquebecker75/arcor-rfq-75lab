@@ -2,13 +2,18 @@
 //   node fonte/gerar-pdf.mjs [endereço do deck] [saída.pdf]
 // O endereço padrão é a prévia local (python3 -m http.server 4731 na cópia do deck).
 import { chromium } from '/Volumes/hd caique becker/Mac Caique/Projetos/ariuno-videos/node_modules/playwright/index.mjs';
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, readFileSync, readdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 
 const BASE = process.argv[2] || 'http://localhost:4731/';
-const SAIDA = process.argv[3] || new URL('../arcor-75lab.pdf', import.meta.url).pathname;
+const SAIDA = process.argv[3] || fileURLToPath(new URL('../arcor-75lab.pdf', import.meta.url));
 const PASTA = process.env.PASTA_PAGINAS || '';   // se definida, guarda os JPG de cada página para revisar
 const QUALIDADE = 86;
 
+const paginas = [];
+if (process.env.SO_MONTAR) {
+  for (const f of readdirSync(PASTA).filter((f) => f.endsWith('.jpg')).sort()) paginas.push(readFileSync(`${PASTA}/${f}`));
+} else {
 const navegador = await chromium.launch({ channel: 'chrome', args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
 const pg = await navegador.newPage({ viewport: { width: 1600, height: 900 }, deviceScaleFactor: 2 });
 pg.on('pageerror', (e) => console.log('erro na página:', e.message));
@@ -17,7 +22,6 @@ await pg.evaluate(() => document.fonts.ready);
 const total = await pg.evaluate(() => document.querySelectorAll('.tela').length);
 if (PASTA) mkdirSync(PASTA, { recursive: true });
 
-const paginas = [];
 for (let n = 1; n <= total; n++) {
   await pg.evaluate((n) => { location.hash = '#' + n; }, n);
   await pg.waitForFunction((n) => document.querySelector('#cont').textContent.startsWith(String(n).padStart(2, '0')), n);
@@ -42,6 +46,7 @@ for (let n = 1; n <= total; n++) {
   console.log('página', n, Math.round(jpg.length / 1024) + ' KB');
 }
 await navegador.close();
+}
 
 // PDF mínimo: uma imagem JPEG (DCTDecode, sem recompressão) por página de 960 x 540 pt (16:9, tamanho de slide)
 const W = 960, H = 540, PX = 3200, PY = 1800;
