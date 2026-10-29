@@ -1,0 +1,38 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-pincel" viewBox="0 0 48 48"><path d="M30 6l12 12-20 20H10V26zM25 11l12 12M10 38l-4 4"/></symbol>
+  <symbol id="i-fabrica" viewBox="0 0 48 48"><path d="M6 42V20l10 6v-6l10 6v-6l10 6V8h6v34zM13 35h5M23 35h5M33 35h5"/></symbol>
+  <symbol id="i-caminhao" viewBox="0 0 48 48"><path d="M4 11h24v21H4zM28 18h9l7 8v6H28z"/><circle cx="12" cy="36" r="4"/><circle cx="36" cy="36" r="4"/></symbol>
+  <symbol id="i-rede" viewBox="0 0 48 48"><rect x="19" y="19" width="10" height="10"/><rect x="5" y="5" width="8" height="8"/><rect x="35" y="5" width="8" height="8"/><rect x="5" y="35" width="8" height="8"/><rect x="35" y="35" width="8" height="8"/><path d="M13 13l6 6M35 13l-6 6M13 35l6-6M35 35l-6-6"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 13v11l8 5"/></symbol>
+  <symbol id="i-escudo" viewBox="0 0 48 48"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M17 24l5 5 9-10"/></symbol>
+  <symbol id="i-olho" viewBox="0 0 48 48"><path d="M4 24s7-13 20-13 20 13 20 13-7 13-20 13S4 24 4 24z"/><circle cx="24" cy="24" r="6"/></symbol>
+  <symbol id="i-cadeado" viewBox="0 0 48 48"><rect x="10" y="22" width="28" height="20"/><path d="M16 22v-6a8 8 0 0 1 16 0v6M24 30v5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 48 48"><path d="M9 25l9 9 21-21"/></symbol>
+  <symbol id="i-x" viewBox="0 0 48 48"><path d="M12 12l24 24M36 12L12 36"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 64 64"><rect x="8" y="8" width="18" height="18"/><rect x="38" y="8" width="18" height="18"/><rect x="8" y="38" width="18" height="18"/><path d="M14 14h6v6h-6zM44 14h6v6h-6zM14 44h6v6h-6zM38 38h6v6h-6zM50 50h6M50 38v6M38 50h6M44 44h6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 48 48"><path d="M24 44s14-13 14-24a14 14 0 0 0-28 0c0 11 14 24 14 24z"/><circle cx="24" cy="20" r="5"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 48 48"><path d="M6 15h36v25H6zM17 15l3-6h8l3 6"/><circle cx="24" cy="27" r="7"/></symbol>
+  <symbol id="i-calendario" viewBox="0 0 48 48"><path d="M6 10h36v32H6zM6 19h36M16 5v9M32 5v9M13 27h5M22 27h5M31 27h5M13 34h5M22 34h5"/></symbol>
+  <symbol id="i-grafico" viewBox="0 0 48 48"><path d="M7 7v34h35M13 33l9-10 6 6 12-14"/></symbol>
+  <symbol id="i-alvo" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="10"/><circle cx="24" cy="24" r="2"/></symbol>
+  <symbol id="i-pessoas" viewBox="0 0 48 48"><circle cx="17" cy="16" r="6"/><circle cx="33" cy="18" r="5"/><path d="M5 40c0-8 5-13 12-13s12 5 12 13M29 28c7 0 13 4 13 12"/></symbol>
+  <symbol id="i-raio" viewBox="0 0 48 48"><path d="M27 4L10 27h12l-3 17 19-25H26z"/></symbol>
+  <symbol id="i-loja" viewBox="0 0 48 48"><path d="M6 18l4-10h28l4 10zM8 18v24h32V18M20 42V30h8v12"/></symbol>
+  <symbol id="i-caixa" viewBox="0 0 48 48"><path d="M6 14l18-8 18 8v20l-18 8-18-8zM6 14l18 8 18-8M24 22v20"/></symbol>
+  <symbol id="i-arquivo" viewBox="0 0 48 48"><path d="M11 4h18l9 9v31H11zM28 4v10h10M17 25h14M17 32h14"/></symbol>
+  <symbol id="i-alerta" viewBox="0 0 48 48"><path d="M24 6l20 36H4zM24 19v11M24 35v2"/></symbol>
+  <symbol id="i-moeda" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M29 17h-7a4 4 0 0 0 0 8h4a4 4 0 0 1 0 8h-8M24 13v4M24 33v3"/></symbol>
+  <symbol id="i-cubo" viewBox="0 0 48 48"><path d="M24 4l18 10v20L24 44 6 34V14zM6 14l18 10 18-10M24 24v20"/></symbol>
+  <symbol id="i-sinal" viewBox="0 0 48 48"><circle cx="24" cy="30" r="3"/><path d="M16 22a11 11 0 0 1 16 0M10 16a19 19 0 0 1 28 0M24 33v10"/></symbol>
+  <symbol id="i-lupa" viewBox="0 0 48 48"><circle cx="20" cy="20" r="13"/><path d="M30 30l13 13"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 48 48"><path d="M6 6h18l18 18-18 18L6 24z"/><circle cx="15" cy="15" r="3"/></symbol>
+  <symbol id="i-pasta" viewBox="0 0 48 48"><path d="M5 10h14l4 5h20v25H5z"/></symbol>
+  <symbol id="i-versao" viewBox="0 0 48 48"><circle cx="12" cy="10" r="5"/><circle cx="12" cy="38" r="5"/><circle cx="36" cy="18" r="5"/><path d="M12 15v18M36 23c0 9-12 6-21 13"/></symbol>
+  <symbol id="i-nota" viewBox="0 0 48 48"><path d="M10 4h28v40l-5-4-5 4-4-4-5 4-4-4-5 4zM17 16h14M17 24h14M17 32h8"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 48 48"><path d="M7 24h32M29 14l10 10-10 10"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 48 48"><path d="M6 8h36v24H20l-9 8v-8H6z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 48 48"><path d="M5 10h38v28H5zM5 10l19 16 19-16"/></symbol>
+  <symbol id="i-fone" viewBox="0 0 48 48"><path d="M10 6h8l4 10-5 4c2 5 6 9 11 11l4-5 10 4v8c0 2-2 4-4 4C20 42 6 28 6 10c0-2 2-4 4-4z"/></symbol>
+  <symbol id="i-clique" viewBox="0 0 48 48"><path d="M19 26V9a4 4 0 0 1 8 0v13l9 2c3 .7 5 3.6 4.4 6.6L39 39c-.5 3-3 5-6 5H24c-2 0-3.8-1-5-2.6L11 31c-1.4-2 0-4.8 2.4-4.8 1 0 2 .4 2.7 1.2L19 30"/><path d="M8 12l4 2M10 4l3 4M18 1v4"/></symbol>
+  <symbol id="i-funil" viewBox="0 0 48 48"><path d="M5 7h38L28 25v15l-8 4V25z"/></symbol>
+</svg>
