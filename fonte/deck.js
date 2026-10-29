@@ -34,11 +34,12 @@
   /* navegação */
   const aoEntrar={};
   function aplicar(n){
+    telas[atual].querySelectorAll('video').forEach(v=>v.pause());
     pararAutos();
     telas[atual].classList.remove('ativa');
     atual=n;const t=telas[n];
     t.classList.add('ativa');
-    stage.className='t-'+({claro:'claro',escuro:'escuro',lime:'lime',foto:'foto'}[t.dataset.tema]||'escuro')+(n===0?' capa':'');
+    stage.className='t-'+({claro:'claro',claro2:'claro',escuro:'escuro',lime:'lime',foto:'foto'}[t.dataset.tema]||'escuro')+(n===0?' capa':'');
     capTxt.textContent=t.dataset.cap||'';
     prog.style.width=((n+1)/total*100)+'%';
     cont.textContent=dd(n+1)+' / '+dd(total);
@@ -104,7 +105,7 @@
     else if(e.key==='Home')ir(0);else if(e.key==='End')ir(total-1);
     else if(e.key==='m'||e.key==='M')sum.classList.contains('aberto')?fecharSum():abrirSum();
   });
-  const INTERATIVO='a,button,input,.amplia,[data-cursor],#sumario,.ct,model-viewer,.dentro li,.trilha-cap span';
+  const INTERATIVO='a,button,input,.amplia,[data-cursor],#sumario,.ct,model-viewer,.celular,.dentro li,.trilha-cap span';
   $('#wrap').addEventListener('click',e=>{
     if(e.target.closest(INTERATIVO))return;
     if(sum.classList.contains('aberto'))return;
@@ -153,6 +154,59 @@
     c.querySelectorAll('.dentro li').forEach((li,k)=>{li.dataset.cursor='Ir';li.addEventListener('click',e=>{e.stopPropagation();ir(i0+1+k);});});
   });
 
+  /* a estrutura: quatro frentes em órbita */
+  (function(){
+    const dados=$('#freDados').content.querySelectorAll('i');
+    $$('.s-fre .frente').forEach(b=>b.addEventListener('click',e=>{
+      e.stopPropagation();const i=+b.dataset.f,d=dados[i];
+      $$('.s-fre .frente').forEach(x=>x.classList.toggle('on',x===b));
+      $('#freN').textContent='Frente 0'+(i+1);
+      const box=$('#freBox');box.innerHTML='<h3></h3><p></p>';box.querySelector('h3').textContent=d.dataset.t;box.querySelector('p').textContent=d.textContent;
+      box.classList.remove('troca');void box.offsetWidth;box.classList.add('troca');
+    }));
+    // no PDF, as quatro de uma vez
+    const todas=$('.s-fre .todas-f');
+    dados.forEach((d,k)=>{const el=document.createElement('div');el.innerHTML='<span>0'+(k+1)+'</span><b></b><p></p>';el.querySelector('b').textContent=d.dataset.t;el.querySelector('p').textContent=d.textContent;todas.appendChild(el);});
+    roteiro('s-fre',{itens:()=>$$('.s-fre .frente'),texto:k=>dados[k].textContent});
+  })();
+
+  /* depoimento e vídeos de projetos: a fila troca o que toca no celular */
+  (function(){
+    const v=$('#vidDep'),cel=v.closest('.celular'),pr=$('#progDep');
+    const alterna=e=>{e.stopPropagation();if(v.paused){v.play();}else{v.pause();}};
+    $('#playDep').addEventListener('click',alterna);
+    v.addEventListener('click',alterna);
+    v.addEventListener('play',()=>cel.classList.add('tocando'));
+    v.addEventListener('pause',()=>cel.classList.remove('tocando'));
+    v.addEventListener('ended',()=>{cel.classList.remove('tocando');v.load();});
+    v.addEventListener('timeupdate',()=>{pr.style.width=(v.duration?v.currentTime/v.duration*100:0)+'%';});
+    const vids=$$('#filaVid .vid');
+    vids.forEach(b=>b.addEventListener('click',e=>{
+      e.stopPropagation();vids.forEach(x=>x.classList.toggle('on',x===b));
+      v.pause();v.poster=b.dataset.poster;v.src=b.dataset.src;pr.style.width='0';
+      $('#durDep').textContent='Assistir · '+b.dataset.dur;v.play();
+    }));
+  })();
+
+  /* Ariuno de gestão: o simulador mostra cada passo da entrada à avaliação */
+  (function(){
+    const lis=$$('#simPassos li'),imgs=$$('#simVista img'),url=$('#simUrl'),n=$('#simuN');
+    if(!lis.length)return;
+    let k=0;
+    function mostra(i){
+      k=(i+lis.length)%lis.length;
+      lis.forEach((l,j)=>{l.classList.toggle('on',j===k);l.classList.toggle('feito',j<k);});
+      const im=+lis[k].dataset.img;imgs.forEach((m,j)=>m.classList.toggle('on',j===im));
+      url.textContent=imgs[im].dataset.url;n.textContent='Passo '+(k+1)+' de '+lis.length;
+      $$('.s-simu .fases span').forEach(f=>f.classList.toggle('on',f.className.indexOf('f-'+lis[k].dataset.fase)>=0));
+    }
+    lis.forEach((l,i)=>l.querySelector('button').addEventListener('click',e=>{e.stopPropagation();mostra(i);}));
+    $('#simAnt').addEventListener('click',e=>{e.stopPropagation();mostra(k-1);});
+    $('#simProx').addEventListener('click',e=>{e.stopPropagation();mostra(k+1);});
+    aoEntrar['s-simu']=()=>mostra(0);
+    roteiro('s-simu',{itens:()=>lis.map(l=>l.querySelector('button')),texto:i=>lis[i].textContent,extra:1500});
+  })();
+
   /* formato 02: cada degrau conta o que cobre */
   (function(){
     const degs=$$('.s-f02 .deg'),dados=$('#degDados').content.querySelectorAll('i'),box=$('#degTxt');
@@ -192,8 +246,8 @@
     if(modoPdf)return;
     (autos[t.classList[1]]||[]).forEach(cfg=>{
       const itens=cfg.itens(),n=itens.length;if(!n)return;
-      const ms=k=>leitura(cfg.texto?cfg.texto(k):itens[k].textContent);
-      let i=Math.max(0,itens.findIndex(x=>x.matches('.on')));
+      const ms=k=>leitura(cfg.texto?cfg.texto(k):itens[k].textContent)+(cfg.extra||0);
+      let i=Math.max(0,itens.findIndex(x=>x.matches('.on')||x.parentElement.classList.contains('on')));
       function relogio(k,dur){
         $$('.relogio-auto',t).forEach(r=>r.remove());
         const r=document.createElement('i');r.className='relogio-auto';itens[k].appendChild(r);

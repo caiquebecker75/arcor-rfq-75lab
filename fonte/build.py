@@ -10,7 +10,7 @@ RAIZ = pathlib.Path(__file__).resolve().parent.parent
 F = RAIZ / 'fonte'
 V = time.strftime('%Y%m%d%H%M%S')
 
-(RAIZ / 'assets' / 'deck.css').write_text((F / 'base.css').read_text() + (F / 'arcor.css').read_text())
+(RAIZ / 'assets' / 'deck.css').write_text((F / 'base.css').read_text() + (F / 'arcor.css').read_text() + (F / 'quem-somos.css').read_text())
 (RAIZ / 'assets' / 'deck.js').write_text((F / 'deck.js').read_text())
 
 telas = (F / 'telas.html').read_text()
