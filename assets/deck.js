@@ -5,6 +5,8 @@
   // ?pdf=1: cada tela já no estado final, sem transição nem temporizador (usado para gerar o PDF)
   const modoPdf=new URLSearchParams(location.search).has('pdf');
   if(modoPdf)document.documentElement.classList.add('pdf');
+  // no PDF, a tela com botões vira uma página por botão (o gerador clica cada um): fica o layout da tela, não o resumo
+  if(modoPdf)telas.forEach(t=>{if(t.dataset.estados)t.classList.add('estados');});
   const reduz=matchMedia('(prefers-reduced-motion: reduce)').matches||modoPdf;
   let atual=0, escalaAtual=1, emTransicao=false, pendente=null;
   const total=telas.length, dd=n=>String(n).padStart(2,'0');

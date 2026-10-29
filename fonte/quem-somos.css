@@ -145,16 +145,16 @@
 .s-cli2 .logos img{max-width:100%;max-height:62px;object-fit:contain}
 .s-dep .fila{grid-template-columns:repeat(8,1fr);gap:8px}
 .s-dep .videos .cta{position:static;margin:0 0 10px}
-.pdf .s-fre .detalhe,.pdf .s-fre .orbita .frente.on{display:none}
-.pdf .s-fre .todas-f{display:grid;position:absolute;left:760px;right:72px;top:250px;grid-template-columns:1fr 1fr;gap:12px}
-.pdf .s-fre .todas-f div{border-top:3px solid var(--lime);padding-top:8px}
-.pdf .s-fre .todas-f span{font-family:var(--mono);font-size:11px;color:var(--lime)}
-.pdf .s-fre .todas-f b{display:block;font-family:var(--titulo);font-weight:900;font-size:22px;text-transform:uppercase;margin:4px 0}
-.pdf .s-fre .todas-f p{font-size:13.5px;line-height:1.45;opacity:.85}
+.pdf .s-fre:not(.estados) .detalhe,.pdf .s-fre:not(.estados) .orbita .frente.on{display:none}
+.pdf .s-fre:not(.estados) .todas-f{display:grid;position:absolute;left:760px;right:72px;top:250px;grid-template-columns:1fr 1fr;gap:12px}
+.pdf .s-fre:not(.estados) .todas-f div{border-top:3px solid var(--lime);padding-top:8px}
+.pdf .s-fre:not(.estados) .todas-f span{font-family:var(--mono);font-size:11px;color:var(--lime)}
+.pdf .s-fre:not(.estados) .todas-f b{display:block;font-family:var(--titulo);font-weight:900;font-size:22px;text-transform:uppercase;margin:4px 0}
+.pdf .s-fre:not(.estados) .todas-f p{font-size:13.5px;line-height:1.45;opacity:.85}
 .s-dif .provas>div>span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
 .s-dif .provas b span{font:inherit;opacity:1;letter-spacing:inherit;text-transform:none}
-.pdf .s-fre .orbita{display:none}
-.pdf .s-fre .todas-f{left:640px;top:230px}
+.pdf .s-fre:not(.estados) .orbita{display:none}
+.pdf .s-fre:not(.estados) .todas-f{left:640px;top:230px}
 .s-eng .lead,.s-lojas .lead,.s-ini .lead,.s-proc .lead,.s-fra2 .lead,.s-cli2 .lead,.s-resp2 .lead{max-width:none}
 .s-prop h2{width:860px;font-size:84px}
 .s-prop .lead{top:360px;width:820px;max-width:none}
@@ -224,18 +224,18 @@
 .s-simu .ctl-s .prox{background:var(--lime);color:var(--ink);border-color:var(--lime);animation:pulsa-b 2s ease-in-out infinite}
 @keyframes pulsa-b{50%{box-shadow:0 0 0 6px rgba(192,238,78,.25)}}
 .s-simu .story{display:none}
-.pdf .s-simu .tela-s,.pdf .s-simu .fases{display:none}
-.pdf .s-simu .passos-s li p{display:block}
-.pdf .s-simu .passos-s li{border-color:var(--linha-c)}
-.pdf .s-simu .passos-s li i{background:var(--teal);color:#fff}
-.pdf .s-simu .passos-s{top:250px;gap:5px}
-.pdf .s-simu .passos-s li button{padding:6px 12px}
-.pdf .s-simu .passos-s li p{padding-bottom:8px;font-size:13px}
-.pdf .s-simu .story{display:grid;position:absolute;left:712px;right:72px;top:108px;grid-template-columns:1fr 1fr;gap:12px}
-.pdf .s-simu .story figure{background:var(--ink);padding:6px}
-.pdf .s-simu .story img{width:100%;height:270px;object-fit:cover;object-position:top;display:block;background:#fff}
-.pdf .s-simu .story figcaption{color:var(--paper);font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:8px 4px 4px}
-.pdf .s-simu .story figcaption i{font-style:normal;background:var(--lime);color:var(--ink);padding:1px 6px;margin-right:6px;font-weight:700}
+.pdf .s-simu:not(.estados) .tela-s,.pdf .s-simu:not(.estados) .fases{display:none}
+.pdf .s-simu:not(.estados) .passos-s li p{display:block}
+.pdf .s-simu:not(.estados) .passos-s li{border-color:var(--linha-c)}
+.pdf .s-simu:not(.estados) .passos-s li i{background:var(--teal);color:#fff}
+.pdf .s-simu:not(.estados) .passos-s{top:250px;gap:5px}
+.pdf .s-simu:not(.estados) .passos-s li button{padding:6px 12px}
+.pdf .s-simu:not(.estados) .passos-s li p{padding-bottom:8px;font-size:13px}
+.pdf .s-simu:not(.estados) .story{display:grid;position:absolute;left:712px;right:72px;top:108px;grid-template-columns:1fr 1fr;gap:12px}
+.pdf .s-simu:not(.estados) .story figure{background:var(--ink);padding:6px}
+.pdf .s-simu:not(.estados) .story img{width:100%;height:270px;object-fit:cover;object-position:top;display:block;background:#fff}
+.pdf .s-simu:not(.estados) .story figcaption{color:var(--paper);font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:8px 4px 4px}
+.pdf .s-simu:not(.estados) .story figcaption i{font-style:normal;background:var(--lime);color:var(--ink);padding:1px 6px;margin-right:6px;font-weight:700}
 .s-simu .tela-s .barra-j{height:32px;background:var(--ink);display:flex;align-items:center;gap:7px;padding:0 12px}
 .s-simu .tela-s .barra-j i{width:10px;height:10px;background:var(--paper-3);opacity:.5}
 .s-simu .tela-s .barra-j i:first-child{background:var(--lime);opacity:1}
