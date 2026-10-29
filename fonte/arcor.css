@@ -496,3 +496,8 @@
 .s-demo .kvs-d{left:900px;filter:brightness(.82)}
 .s-demo .veu{background:linear-gradient(180deg,rgba(5,5,5,.8) 0,rgba(5,5,5,0) 20%),linear-gradient(90deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.96) 52%,rgba(5,5,5,.5) 66%,rgba(5,5,5,.1) 82%)}
 .s-demo .cartao-d{width:700px}
+/* na prática: as peças inteiras, cada uma na sua moldura branca, sem corte */
+.s-demo .pecas-d{top:668px;gap:12px}
+.s-demo .pecas-d img{height:132px;width:100%;aspect-ratio:auto;object-fit:contain;background:#fff;padding:6px;border:3px solid var(--paper)}
+.s-demo .pecas-d{display:flex;gap:14px;top:660px;height:176px;right:auto}
+.s-demo .pecas-d img{height:100%;width:auto;flex:none}
