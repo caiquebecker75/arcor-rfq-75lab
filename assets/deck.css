@@ -699,6 +699,48 @@ body.tem-mouse.clicou #anel{transform:scale(.8)}
 /* PDF: chamadas de clique somem, o visor 3D fica parado */
 .pdf .cta{display:none!important}
 
+/* capítulo 07 · na prática: abre a apresentação do KV ao PDV */
+@keyframes pulsa-b{50%{box-shadow:0 0 0 6px rgba(192,238,78,.25)}}
+.s-demo .veu{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,5,.94) 0%,rgba(5,5,5,.86) 38%,rgba(5,5,5,.25) 62%,transparent 80%)}
+.s-demo .cartao-d{position:absolute;left:72px;top:150px;width:720px;color:var(--paper)}
+.s-demo .cartao-d .eyebrow{display:block;margin-bottom:16px}
+.s-demo h2{font-size:74px;line-height:.98;margin-bottom:20px}
+.s-demo .cartao-d>p{font-size:19px;line-height:1.45;opacity:.9;max-width:600px}
+.s-demo .nums-d{display:flex;gap:10px;margin:24px 0 28px}
+.s-demo .nums-d span{border:2px solid var(--linha-e);padding:10px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.s-demo .nums-d b{display:block;font-family:var(--titulo);font-size:40px;color:var(--lime);line-height:.95}
+.s-demo .grande-b{font-size:15px;padding:20px 26px;animation:pulsa-b 2s ease-in-out infinite}
+.s-demo .grande-b .ext{font-size:20px}
+.s-demo .aviso-d{font-family:var(--mono);font-size:11px;opacity:.6;margin-top:18px;letter-spacing:.04em}
+.s-demo .qr-d{position:absolute;right:72px;top:150px;width:300px;background:var(--paper);color:var(--ink);padding:18px;text-align:center;text-decoration:none;box-shadow:12px 12px 0 var(--lime);transition:transform .2s}
+.s-demo .qr-d:hover{transform:translate(-3px,-3px)}
+.s-demo .qr-d img{width:100%;display:block;margin-bottom:12px}
+.s-demo .qr-d b{display:block;font-family:var(--titulo);font-weight:900;font-size:24px;text-transform:uppercase}
+.s-demo .qr-d span{font-family:var(--mono);font-size:10px;opacity:.75;word-break:break-all}
+.s-demo .pecas-d{position:absolute;left:72px;right:72px;bottom:96px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.s-demo .pecas-d img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border:3px solid var(--paper)}
+.s-demo .pecas-d{top:auto}
+.pdf .s-demo .qr-d{box-shadow:12px 12px 0 var(--lime)}
+.s-demo .cartao-d{top:118px}
+.s-demo h2{font-size:66px}
+.s-demo .pecas-d{bottom:auto;top:640px}
+.s-demo .pecas-d img{height:118px;aspect-ratio:auto}
+.s-demo .veu{background:linear-gradient(90deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.93) 46%,rgba(5,5,5,.55) 62%,rgba(5,5,5,.1) 78%)}
+.s-demo{background:#050505}
+.s-demo .kvs-d{position:absolute;top:-40px;bottom:-40px;left:760px;right:-80px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;transform:rotate(-4deg)}
+.s-demo .kvs-d img{width:100%;height:100%;object-fit:cover;display:block}
+.s-demo .kvs-d{z-index:0}
+.s-demo .qr-d{top:118px}
+.s-demo .pecas-d img{background:#e9e9e7}
+.s-cap .trilha-cap{grid-template-columns:repeat(7,1fr)}
+.s-demo .cartao-d>p{font-size:17px}
+.s-demo .nums-d{margin:18px 0 20px}
+.s-demo .pecas-d{top:676px}
+.s-demo .pecas-d img{height:110px}
+.s-demo .kvs-d{left:900px;filter:brightness(.82)}
+.s-demo .veu{background:linear-gradient(180deg,rgba(5,5,5,.8) 0,rgba(5,5,5,0) 20%),linear-gradient(90deg,rgba(5,5,5,1) 0%,rgba(5,5,5,.96) 52%,rgba(5,5,5,.5) 66%,rgba(5,5,5,.1) 82%)}
+.s-demo .cartao-d{width:700px}
+
 /* =====================================================================
    Quem é a 75 LAB e vídeos de projetos
    ===================================================================== */
